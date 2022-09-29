@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 20rem;
+            width: 20rem;
+            margin: 10rem auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: yellow;
+        }
+        .inner-container {
+            height: 15rem;
+            width: 15rem;
+            /* border: 2px solid black; */
+            padding: 2rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            position: relative;
+        }
+        @keyframes rotate {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    @keyframes glow {
+        0%   {background-color: white;box-shadow: 5px 5px 10px 5px white, -5px -5px 10px 5px white;}
+        25%  {background-color: yellow;box-shadow: 5px 5px 10px 5px yellow, -5px -5px 10px 5px yellow;}
+        50%  {background-color: blue;box-shadow: 5px 5px 10px 5px blue, -5px -5px 5px 10px blue;}
+        100% {background-color: green;box-shadow: 5px 5px 10px 5px green, -5px -5px 5px 10px green;}
+    }
+        .eye {
+            border-radius: 50%;
+            height: 3rem;
+            width: 3rem;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(farthest-side, #000000 95%, #0000) 50% 1px/12px
+            12px no-repeat,
+            radial-gradient(farthest-side, #0000 calc(100% - 14px), #ffffff 0);
+            animation: rotate 2s infinite linear;
+            background-color: #ffffff;
+              
+        }
+        @keyframes smile {
+            from {
+                width: 0rem;
+                background-color: #000000;
+            }
+            to {
+                width: 5rem;
+                background-color: #ffffff;
+            }
+        }
+        .mouth {
+            border-radius: 50%;
+            height: 2rem;
+            width: 5rem;
+            position: absolute;
+            border-bottom: 3px solid black;
+            bottom: 1rem;
+            left: calc(5rem);
+            animation: smile 2s infinite;
+        }
+        .shadow {
+        background-color: blue;
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+        position: absolute;
+        top: 50%;
+        box-shadow: 5px 5px 8px 5px blue, -5px -5px 5px 5px blue;
+        opacity: .3;
+        animation: glow 2s infinite;
+        }
+        .sha1 {
+            right: 0;
+        
+        }
+        .sha2 {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="mouth"></div>
+            <div class="shadow sha1"></div>
+            <div class="shadow sha2"></div>
+        </div>
+    </div>
+</body>
+</html>
